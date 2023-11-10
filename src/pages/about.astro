@@ -1,0 +1,34 @@
+---
+import Layout from "../layouts/About.astro";
+import { aboutUsContent } from "../utils/aboutUsContent";
+---
+
+<Layout>
+  <h4 class="text-center font-bold py-2 mb-10 h-20">
+    Bienvenidos a Dalas Kids
+  </h4>
+  <div class="flex flex-col gap-1 select-none">
+    {
+      aboutUsContent.map((item, index) => (
+        <p class="font-thin text-md p-2 text-start md:text-justify   leading-7">
+          <strong class="font-semibold">{item.strong}</strong>
+          {item.text}
+        </p>
+      ))
+    }
+    <strong class="text-center block py-4 my-4">
+      ¡Se parte de la familia Dalas Kids! 👇
+    </strong>
+  </div>
+  <div class="flex justify-center items-center w-[80%]">
+    <iframe
+      class="xs:w-[80%]"
+      src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15864.442975079435!2d-75.5716105!3d6.2491354!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e442908367fc617%3A0x9abfa572dab973b!2sDalas%20Kids!5e0!3m2!1ses-419!2sco!4v1698680886280!5m2!1ses-419!2sco"
+      width="600"
+      height="450"
+      style="border:0;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+</Layout>

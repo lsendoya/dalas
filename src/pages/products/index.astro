@@ -1,0 +1,42 @@
+---
+import BaseHead from "../../components/BaseHead.astro";
+import Footer from "../../components/Footer.astro";
+import Header from "../../components/Header.astro";
+import { references } from "../../utils/products";
+
+const { title, description } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <BaseHead title={title} description={description} />
+  </head>
+
+  <body>
+    <Header />
+    <main>
+      <article class="flex w-full md:w-[90%] gap-4">
+        <ul
+          class="flex w-full flex-wrap items-center justify-center gap-10 flex-col py-8 md:flex-row"
+        >
+          {
+            references.map(({ name, src }) => (
+              <li class="flex flex-col w-[90%] max-w-[20rem] md:w-[30%] justify-center items-stretch py-2 gap-1 shadow-md bg-[#FFFBF5] rounded-2xl">
+                <h5 class="text-center font-semibold text-md leading-normal px-2">{name}</h5>
+                <img
+                  src={src}
+                  alt={name}
+                  class="w-[100%] h-[300px] object-contain"
+                />
+                <button class="text-blue-600 py-2 hover:text-blue-900">
+                  see more
+                </button>
+              </li>
+            ))
+          }
+        </ul>
+      </article>
+    </main>
+    <Footer />
+  </body>
+</html>
