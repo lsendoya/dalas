@@ -3,34 +3,61 @@ import BaseHead from "../../components/BaseHead.astro";
 import Footer from "../../components/Footer.astro";
 import Header from "../../components/Header.astro";
 import { references } from "../../utils/products";
-
-const { title, description } = Astro.props;
+import { AiFillHeart, AiFillShopping } from "react-icons/ai";
+import { sizes } from "../../utils/size";
+import { SITE_DESCRIPTION_PRODUCT, SITE_TITLE_PRODUCT } from "../../consts";
 ---
 
 <html lang="en">
   <head>
-    <BaseHead title={title} description={description} />
+    <BaseHead title={SITE_TITLE_PRODUCT} description={SITE_DESCRIPTION_PRODUCT} />
   </head>
 
   <body>
     <Header />
     <main>
-      <article class="flex w-full md:w-[90%] gap-4">
+      <article class="flex w-full">
         <ul
-          class="flex w-full flex-wrap items-center justify-center gap-10 flex-col py-8 md:flex-row"
+          class="flex w-full flex-wrap items-center justify-center gap-10 flex-col md:py-8 md:flex-row"
         >
           {
             references.map(({ name, src }) => (
-              <li class="flex flex-col w-[90%] max-w-[20rem] md:w-[30%] justify-center items-stretch py-2 gap-1 shadow-md bg-[#FFFBF5] rounded-2xl">
-                <h5 class="text-center font-semibold text-md leading-normal px-2">{name}</h5>
-                <img
-                  src={src}
-                  alt={name}
-                  class="w-[100%] h-[300px] object-contain"
-                />
-                <button class="text-blue-600 py-2 hover:text-blue-900">
-                  see more
-                </button>
+              <li class="w-[90%] md:w-[30%] max-w-sm rounded overflow-hidden shadow-lg bg-[#f5e8ff]">
+                <div class="w-full ">
+                  
+                  <img
+                    class="w-full h-96 bg-cover"
+                    src={src}
+                    alt="Rosa blouse for kids"
+                  />
+                </div>
+                <div class="font-bold text-center text-xl my-4">
+                  Pack x3 Panties para Niña
+                </div>
+                <div class="px-6 py-4">
+                  <p class="text-gray-700 text-base">Cód. 12285</p>
+                </div>
+                <div class="flex justify-center gap-2 px-6 pt-4 pb-2">
+                  {sizes.map(({ size }) => (
+                    <span class="inline-block bg-[--size] rounded-xl px-1 md:px-3 py-1 text-sm font-semibold text-[#faf5ff] mr-2 mb-2">
+                      {size}
+                    </span>
+                  ))}
+                </div>
+                <div class="px-6 pt-4 pb-2 flex justify-between items-center">
+                  <span class="text-lg font-bold text-[#3a0764]">$29.950</span>
+                  <span class="text-md line-through text-gray-500">
+                    $59.900
+                  </span>
+                  <div class="flex">
+                    <button class="text-[#3a0764] text-2xl hover:text-gray-900">
+                      <AiFillHeart />
+                    </button>
+                    <button class="text-[#3a0764] text-2xl hover:text-gray-900 ml-4">
+                      <AiFillShopping />
+                    </button>
+                  </div>
+                </div>
               </li>
             ))
           }

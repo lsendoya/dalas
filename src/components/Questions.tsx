@@ -11,15 +11,15 @@ function Questions() {
   } = useQuestions();
 
   return (
-    <ul className="flex flex-col w-[90%] gap-6 md:gap-6 py-8 md:flex-row">
-      <div className="flex flex-col w-full md:w-1/2 gap-4">
+    <ul className="flex justify-center flex-col w-full gap-6 md:gap-6 py-8 md:flex-row">
+      <div className="flex flex-col w-full md:w-[48%] gap-4 ">
         <SingleColQuestion
           checkedItems={checkedItemsLeft}
           handleClicked={handleClickedLeft}
           questions={questionsLeft}
         />
       </div>
-      <div className="flex flex-col w-full md:w-1/2 gap-4">
+      <div className="flex flex-col w-full md:w-[48%] gap-4">
         <SingleColQuestion
           checkedItems={checkedItemsRight}
           handleClicked={handleClickedRight}

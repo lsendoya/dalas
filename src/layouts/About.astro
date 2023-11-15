@@ -1,9 +1,8 @@
 ---
-import type { CollectionEntry } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import FormattedDate from '../components/FormattedDate.astro';
+import { SITE_TITLE_ABOUT, SITE_DESCRIPTION_ABOUT } from '../consts';
 
 
 const { title, description, } = Astro.props;
@@ -11,7 +10,7 @@ const { title, description, } = Astro.props;
 
 <html lang="en">
 	<head>
-		<BaseHead title={title} description={description} />
+		<BaseHead title={SITE_TITLE_ABOUT} description={SITE_DESCRIPTION_ABOUT} />
 	</head>
 
 	<body>

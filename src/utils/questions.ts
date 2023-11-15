@@ -3,7 +3,7 @@ import type { TQuestion } from "../types/questions";
 export const questionsLeft = [
   {
     question: "¿Qué tipo de materiales utilizamos?",
-    answer: "Usamos materiales de alta calidad, que son cómodos y duraderos.",
+    answer: "Alta calidad, que son cómodos y duraderos.",
   },
   {
     question: "¿Cuánto tiempo tarda el envío?",
@@ -25,18 +25,18 @@ export const questionsRight = [
     answer: "El tiempo de devolución es de 30 días.",
   },
   {
-    question: "¿Cómo puedo realizar el seguimiento de mi pedido?",
+    question: "¿Cómo realizar el seguimiento de mi pedido?",
     answer:
-      'Puedes realizar el seguimiento de tu pedido en la sección "Mis pedidos".',
+      'Escribenos y pregunta por tu pedido',
   },
   {
     question: "¿Cómo elegir la talla adecuada para mi hija?",
     answer:
-      'Puedes encontrar la guía de tallas en la sección "Guía de tallas".',
+      'Puedes encontrar la guía de tallas en la sección Guía de tallas.',
   },
   {
     question: "¿Cómo puedo contactar con el servicio de atención al cliente?",
     answer:
-      'Puedes contactar con el servicio de atención al cliente en la sección "Contacto".',
+      'Solo escribenos y te atenderemos.',
   },
 ] as TQuestion[];

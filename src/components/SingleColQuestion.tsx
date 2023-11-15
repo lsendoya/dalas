@@ -17,10 +17,10 @@ function SingleColQuestion({
       {questions.map(({ question, answer }: TQuestion, ind: number) => (
         <div
           key={ind}
-          className="flex flex-col w-full  items-center p-1 gap-1 shadow-md bg-[#F9F9F9] rounded-2xl"
+          className="flex flex-col w-full  items-center py-2 gap-1 shadow-md bg-[#f5e8ff] rounded-2xl"
         >
           <div className="w-full  flex items-center justify-center py-3 gap-2 ">
-            <p className="w-[90%] h-8 md:h-8 md:py-2 align-middle text-center text-md md:text-lg ">
+            <p className="w-[90%]  md:h-10 md:py-1 align-middle text-center text-md md:text-lg ">
               {question}
             </p>
             <button
@@ -28,15 +28,15 @@ function SingleColQuestion({
               onClick={() => handleClicked(ind)}
             >
               {checkedItems[ind] ? (
-                <AiOutlineMinus className="text-purple-500 text-xl hover:text-purple-900 transform hover:scale-110 transition duration-300" />
+                <AiOutlineMinus className="text-[--button] text-xl hover:text-purple-900 transform hover:scale-110 transition duration-300" />
               ) : (
-                <AiOutlinePlus className="text-purple-500 text-xl hover:text-purple-900 transform hover:scale-110 transition duration-300" />
+                <AiOutlinePlus className="text-[--button] text-xl hover:text-purple-900 transform hover:scale-110 transition duration-300" />
               )}
             </button>
           </div>
           <p
             key={ind}
-            className={`text-center px-2  text-[1rem] ${
+            className={`text-center mt-2 px-2  text-[1rem] ${
               checkedItems[ind] ? "block" : "hidden"
             }`}
           >
