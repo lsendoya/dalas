@@ -1,4 +1,5 @@
-import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
+import pkg from 'react-icons/ai/index';
+const { AiOutlineMinus, AiOutlinePlus } = pkg;
 import type { TQuestion } from "../types/questions";
 
 type SingleColQuestionProps = {
