@@ -17,8 +17,9 @@ function SingleColQuestion({
     <>
       {questions.map(({ question, answer }: TQuestion, ind: number) => (
         <div
+          onClick={() => handleClicked(ind)}
           key={ind}
-          className="flex flex-col w-full  items-center py-2 gap-1 shadow-md bg-[#f5e8ff] rounded-2xl"
+          className="flex flex-col w-full  items-center px-3 py-2 gap-1 shadow-md bg-[#f5e8ff] rounded-2xl"
         >
           <div className="w-full  flex items-center justify-center py-3 gap-2 ">
             <p className="w-[90%]  md:h-10 md:py-1 align-middle text-center text-md md:text-lg ">

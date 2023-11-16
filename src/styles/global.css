@@ -59,6 +59,4 @@ main {
 a {
   color: var(--accent);
 }
-a:hover {
-  color: var(--accent);
-}
+
