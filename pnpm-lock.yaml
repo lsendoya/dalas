@@ -29,6 +29,9 @@ dependencies:
   '@types/react-dom':
     specifier: ^18.0.6
     version: 18.2.14
+  animate.css:
+    specifier: ^4.1.1
+    version: 4.1.1
   astro:
     specifier: ^3.4.0
     version: 3.4.0(typescript@5.2.2)
@@ -1755,6 +1758,10 @@ packages:
     resolution: {integrity: sha512-nc0Axzp/0FILLEVsm4fNwLCwMttvhEI263QtVPQcbpfZZ3ts0hLsZGOpE6czNlid7CJ9MlyH8reXkpsf3YUY4w==}
     engines: {node: '>=0.4.0'}
     hasBin: true
+    dev: false
+
+  /animate.css@4.1.1:
+    resolution: {integrity: sha512-+mRmCTv6SbCmtYJCN4faJMNFVNN5EuCTTprDTAo7YzIGji2KADmakjVA3+8mVDkZ2Bf09vayB35lSQIex2+QaQ==}
     dev: false
 
   /ansi-align@3.0.1:

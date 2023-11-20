@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useEffect } from "react";
 
 export function useQuestions() {
   const [checkedItems, setCheckedItems] = useState<boolean[]>([]);
