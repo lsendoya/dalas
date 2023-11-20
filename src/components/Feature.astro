@@ -1,0 +1,29 @@
+---
+import { Icon } from "astro-icon";
+import { features } from "../utils/feature";
+const STYLE = " w-8 text-purple-800 transition duration-500 ease-in-out hover:text-[--color-hover]  animate-pulse delay-500";
+
+---
+
+<article aria-labelledby="product-reference" class="flex flex-col justify-center items-center p-4 bg-white">
+  <div class="w-full max-w-4xl px-4 gap-4">
+    <div class="flex flex-col gap-6">
+      <h2 class="text-center text-2xl md:text-4xl font-bold text-gray-800">
+        Lo que tu hija necesita
+      </h2>
+      <p class="text-center text-sm md:text-lg font-medium text-gray-600">
+        Haz que tu hija se sienta segura y cómoda.
+      </p>
+    </div>
+    <ul class="flex flex-col md:flex-row justify-center items-center gap-4 py-8">
+      {features.map((feature) => (
+        <li class="flex flex-col w-[90%] md:h-52 md:w-[25%] justify-center items-center p-4 gap-4 shadow-md bg-purple-100 hover:bg-purple-200 transition duration-300 ease-in-out rounded-2xl">
+          <Icon name={feature.icon} class="h-8 w-8 text-purple-500" />
+          <p class="text-center text-sm md:text-md lg:text-lg leading-normal px-2">
+            {feature.text}
+          </p>
+        </li>
+      ))}
+    </ul>
+  </div>
+</article>

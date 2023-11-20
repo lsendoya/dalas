@@ -1,4 +1,4 @@
-import pkg from 'react-icons/ai/index';
+import pkg from "react-icons/ai/index";
 const { AiOutlineMinus, AiOutlinePlus } = pkg;
 import type { TQuestion } from "../types/questions";
 
@@ -7,6 +7,9 @@ type SingleColQuestionProps = {
   checkedItems: boolean[];
   handleClicked: (index: number) => void;
 };
+
+const STYLE =
+  "text-[--button] text-xl hover:text-purple-900 transform hover:scale-110 transition duration-300";
 
 function SingleColQuestion({
   checkedItems,
@@ -19,10 +22,10 @@ function SingleColQuestion({
         <div
           onClick={() => handleClicked(ind)}
           key={ind}
-          className="flex flex-col w-full  items-center px-3 py-2 gap-1 shadow-md bg-[#f5e8ff] rounded-2xl"
+          className="flex flex-col w-full  gap-2 shadow-md bg-[#faf5ff] rounded-md transition-[background] duration-1000 ease-in-out hover:bg-[#ecd5ff]  hover:duration-1000 hover:ease-in "
         >
-          <div className="w-full  flex items-center justify-center py-3 gap-2 ">
-            <p className="w-[90%]  md:h-10 md:py-1 align-middle text-center text-md md:text-lg ">
+          <div className="w-full py-2  flex justify-around  gap-2 ">
+            <p className="w-[80%] align-middle text-left text-[1rem] md:text-lg ">
               {question}
             </p>
             <button
@@ -30,16 +33,19 @@ function SingleColQuestion({
               onClick={() => handleClicked(ind)}
             >
               {checkedItems[ind] ? (
-                <AiOutlineMinus className="text-[--button] text-xl hover:text-purple-900 transform hover:scale-110 transition duration-300" />
+                <AiOutlineMinus className={STYLE} />
               ) : (
-                <AiOutlinePlus className="text-[--button] text-xl hover:text-purple-900 transform hover:scale-110 transition duration-300" />
+                <AiOutlinePlus className={STYLE} />
               )}
             </button>
           </div>
           <p
+            id={`answer-${ind}`}
             key={ind}
-            className={`text-center mt-2 px-2  text-[1rem] ${
-              checkedItems[ind] ? "block" : "hidden"
+            className={`text-center  py-2 md:py-1  text-[0.8rem] md:text-md xl:text-xl ${
+              checkedItems[ind]
+                ? "block animate-[fadeInUp_0.6s_ease-in-out]"
+                : "hidden"
             }`}
           >
             {answer}

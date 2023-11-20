@@ -1,39 +1,30 @@
 ---
 import SocialLinks from "./SocialLinks.astro";
-const today = new Date();
-// <SocialLinks/>
+const w="24"
+const h="24"
 ---
 
-<!-- <footer class="flex flex-col justify-center items-center pt-6 border-t-4 border-t-slate-100 ">
-	<p class="text-md font-medium">Siguenos en nuestras redes sociales</p>
-	<p class="text-sm">&copy; {today.getFullYear()} Dalas All rights reserved.</p>
-</footer> -->
-
 <footer class="bg-[rgb(245,232,255)]">
-	<div class="flex flex-col justify-between  gap-6 max-w-6xl mx-auto px-4 py-6">
-	  <div class="flex flex-col md:flex-row gap-8 md:gap-2 flex-wrap justify-between items-center">
-		<div class="flex flex-col justify-center gap-2 md:items-center py-2">
-		  <a href="/" class="block text-2xl text-[#3a0764] font-bold mb-2 md:mb-0 md:mr-6">DALAS</a>
-		  <div class="text-center mt-4 hidden md:block">
-			<p class="text-[#3a0764] text-sm">© 2023 DALAS. All rights reserved.</p>
-		  </div>
-		</div>
-		<nav class="flex flex-col md:flex-row ">
-		  <ul class="flex flex-col gap-4 md:gap-2  flex-wrap items-center">
-			<li><a href="/" class="text-[#3a0764] md:text-[1rem]">Home</a></li>
-			<li><a href="/products" class="text-[#3a0764] md:text-[1rem]">Products</a></li>
-			<li><a href="/blog" class="text-[#3a0764] md:text-[1rem]">Blog</a></li>
-			<li><a href="/about" class="text-[#3a0764] md:text-[1rem]">About</a></li>
-		  </ul>
-		</nav>
-		<SocialLinks/>
-	</div>
-	<div class="text-center mt-4 md:hidden">
-		<p class="text-[#3a0764] text-sm">© 2023 DALAS. All rights reserved.</p>
-	  </div>
-	
-	</div>
-  </footer>
-  
+  <div
+    class="max-w-6xl h-min mx-auto px-4 py-2 flex flex-col justify-between items-center gap-2"
+  >
+    <nav aria-label="Footer navigation">
+      <ul class="w-full flex flex-col gap-2 items-center py-2 text-purple-700">
+        <li><a href="/" class="text-sm hover:text-purple-500">Home</a></li>
+        <li>
+          <a href="/products" class="text-sm hover:text-purple-500">Products</a>
+        </li>
+        <li><a href="/blog" class="text-sm hover:text-purple-500">Blog</a></li>
+        <li>
+          <a href="/about" class="text-sm hover:text-purple-500">About</a>
+        </li>
+      </ul>
+    </nav>
 
- 
+    <SocialLinks witdh={w} height={h} />
+
+    <p class="text-purple-700 text-sm text-center w-full mt-4">
+      © 2023 DALAS. All rights reserved.
+    </p>
+  </div>
+</footer> 

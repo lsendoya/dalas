@@ -1,0 +1,35 @@
+---
+import CardSingleProduct from "../../../components/CardSingleProduct.astro";
+import Layout from "../../../layouts/Product.astro";
+import type { TGeneralInfo } from "../../../types/product.js";
+import { references } from "../../../utils/references.js";
+
+export async function getStaticPaths() {
+  let paths: {
+    params: { ref: string; id: string };
+    props: { product: TGeneralInfo };
+  }[] = [];
+
+  references.forEach((reference) => {
+    reference.data.forEach((element) => {
+      paths.push({
+        params: {
+          ref: reference.name,
+          id: element.id.toString(),
+        },
+        props: {
+          product: element,
+        },
+      });
+    });
+  });
+
+  return paths;
+}
+
+const { product } = Astro.props;
+---
+
+<Layout>
+  <CardSingleProduct product={product} />
+</Layout>

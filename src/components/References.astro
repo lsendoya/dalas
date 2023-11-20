@@ -1,0 +1,41 @@
+---
+import type { TReference } from "../types/reference";
+
+interface Props {
+  references: TReference[];
+}
+
+const { references } = Astro.props;
+---
+
+<section class="flex w-full">
+  <ul
+    class="flex w-full flex-wrap items-center justify-center gap-10 flex-col md:py-8 md:flex-row"
+    aria-label="Lista de referencias"
+  >
+    {
+      references.map(({ name, src, collection }) => (
+        <li class="w-[90%] md:w-[30%] max-w-sm rounded-3xl">
+          <article class="rounded overflow-hidden shadow-lg bg-[#f5e8ff]">
+            <figure>
+              <a href={`products/${name}`}>
+                <img
+                  class="w-full h-40 object-cover"
+                  src={src}
+                  alt={`Imagen de ${name}`}
+                />
+                <figcaption class="font-bold text-center text-xl my-4">
+                  {name}
+                </figcaption>
+              </a>
+            </figure>
+            <div class="px-6 py-4 bg-[#ecd5ff]">
+              <p class="text-gray-700 text-base underline">Ref. {collection}</p>
+              <p class="text-center text-sm md:text-md">Pack de tres unidades por referencia</p>
+            </div>
+          </article>
+        </li>
+      ))
+    }
+  </ul>
+</section>

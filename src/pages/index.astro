@@ -1,14 +1,22 @@
 ---
-import { features } from "../utils/feature";
-import { Icon } from "astro-icon";
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Questions from "../components/Questions.tsx";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import Hero from "../components/Hero.astro";
+import Feature from "../components/Feature.astro";
 ---
 
-<!doctype html>
+<script>
+  import { firebaseConfig } from "../../firebaseConfig";
+  import { initializeApp } from "firebase/app";
+  import { getAnalytics } from "firebase/analytics";
+
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
+
 <html lang="en">
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
@@ -16,80 +24,13 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
   <body>
     <Header title={SITE_TITLE} />
     <main class="gap-6">
-      <article class="flex w-full items-center justify-center my-4">
-        <div
-          class="w-full flex-wrap px-4 md:w-[60rem] flex flex-col md:flex-row md:gap-8"
-        >
-          <div class="md:w-[100%] md:h-[30rem]">
-            <img
-              class="md:w-full md:h-full py-2 md:bg-contain"
-              src="/hero1.png"
-              alt="Hero Dalas Kids"
-            />
-          </div>
-          <div
-            class="flex flex-col gap-4 py-4 h-72  md:w-full md:h-96 items-center justify-center md:p-4 shadow-md md:shadow-none md:gap-7 rounded-md"
-          >
-            <h2
-              class="w-[96%] md:w-full md:h-44 text-center text-2xl md:text-[2.8rem] md:leading-tight font-bold"
-            >
-              La ropa interior de niña más adorable y cómoda
-            </h2>
-            <p class="text-sm text-center sm:text-base md:text-2xl">
-              Descubre nuestra línea de ropa interior de niña con diseños a la
-              moda y materiales de alta calidad.
-            </p>
-            <a
-            href="/products"
-        
-              class="block bg-[--button] md:w-[20%] text-white font-bold p-2 rounded text-center"
-            >
-              Comprar
-            </a>
-          </div>
-        </div>
-      </article>
-      <hr class="w-[80%] my-2 border-t-1 border-gray-400 md:border-gray-200" />
-      <article class="flex justify-center items-center p-4">
-        <div class="w-full px-4 md:[8rem] gap-4">
-          <div class="flex flex-col gap-6">
-            <h2 class="text-center text-2xl md:text-4xl font-bold">
-              LO QUE TU HIJA NECESITA
-            </h2>
-            <p class="text-center text-md font-medium md:text-xl">
-              Haz que tu hija se sienta segura y comoda.
-            </p>
-          </div>
-          <ul class="flex gap-10 flex-col py-8 md:gap-4 md:flex-row">
-            {
-              features.map((feature) => (
-                <li class="flex flex-col md:w-2/5 items-center py-3 p-2 gap-4 shadow-md bg-[#F9F9F9] rounded-2xl">
-                  <Icon name={`${feature.icon}`} class="w-8 text-purple-800" />
-                  <p class="text-center text-md leading-normal px-2">
-                    {feature.text}
-                  </p>
-                </li>
-              ))
-            }
-          </ul>
-        </div>
-      </article>
-
+      <Hero />
       <hr class="w-[80%] my-2 border-t-1 border-gray-400 md:border-gray-200" />
 
-      <article class="flex justify-center items-center p-2">
-        <div class="w-full p-2 gap-4 flex flex-col justify-center items-center">
-          <div class="flex flex-col gap-6">
-            <h2 class="text-center text-2xl md:text-4xl font-bold">
-              PREGUNTAS FRECUENTES
-            </h2>
-            <p class="text-center text-md font-normal md:text-xl">
-              No dudes en consultarnos si necesitas más información
-            </p>
-          </div>
-          <Questions client:load />
-        </div>
-      </article>
+      <Feature />
+      <hr class="w-[80%] my-2 border-t-1 border-gray-400 md:border-gray-200" />
+
+      <Questions client:load />
     </main>
     <Footer />
   </body>

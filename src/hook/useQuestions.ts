@@ -1,24 +1,29 @@
 import { useState } from "react";
+import { useEffect } from "react";
 
 export function useQuestions() {
-  const [checkedItemsLeft, setCheckedItemsLeft] = useState<boolean[]>([]);
-  const [checkedItemsRight, setCheckedItemsRight] = useState<boolean[]>([]);
+  const [checkedItems, setCheckedItems] = useState<boolean[]>([]);
 
-  const handleClickedLeft = (index: number) => {
-    const toggleItems = [...checkedItemsLeft];
+  const handleClicked = (index: number) => {
+    const toggleItems = [...checkedItems];
+    const element = document.getElementById(`answer-${index}`);
+
     toggleItems[index] = !toggleItems[index];
-    setCheckedItemsLeft(toggleItems);
-  };
-  const handleClickedRight = (index: number) => {
-    const toggleItems = [...checkedItemsRight];
-    toggleItems[index] = !toggleItems[index];
-    setCheckedItemsRight(toggleItems);
+
+    if (toggleItems[index]) {
+      setCheckedItems(toggleItems);
+    } else {
+      element?.classList.add("animate-[fadeOutRight_0.6s_ease-in-out]");
+      setTimeout(() => {
+        setCheckedItems(toggleItems);
+
+        element?.classList.add("hidden");
+      }, 590);
+    }
   };
 
   return {
-    checkedItemsLeft,
-    checkedItemsRight,
-    handleClickedLeft,
-    handleClickedRight,
+    checkedItems,
+    handleClicked,
   };
 }

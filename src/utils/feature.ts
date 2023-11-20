@@ -3,7 +3,7 @@ import type { TFeature } from "../types/feature";
 export const features = [
   {
     icon: "ic:baseline-discount",
-    text: "Dalas es la marca perfecta para quienes buscan ropa de alta calidad a precios accesibles.",
+    text: "Perfecto para quienes buscan alta calidad a buenos precios.",
   },
   {
     icon: "ic:baseline-auto-awesome",

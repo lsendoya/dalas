@@ -7,7 +7,11 @@
 :root {
   --size: #9733ea;
   --size-font: #faf5ff;
-  --button:#8022ce;
+  --color-hover: #3a0764;
+  --color-focus: #8022ce;
+  --color-ring: #6b21a8;
+  --color-active: #571c87;
+  --button: #9733ea;
   --accent: #6b21a8;
   --accent-dark: #000d8a;
   --black: 15, 18, 25;
@@ -59,4 +63,3 @@ main {
 a {
   color: var(--accent);
 }
-
