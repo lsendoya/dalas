@@ -1,5 +1,6 @@
 ---
-import { MdMoreHoriz } from "react-icons/md";
+import pkg from "react-icons/md/index";
+
 import type { TGeneralInfo } from "../types/product";
 import type { TReference } from "../types/reference";
 import Sizes from "./Sizes.astro";
@@ -9,6 +10,7 @@ interface Props {
   object: TReference;
 }
 
+const { MdMoreHoriz } = pkg;
 const { data, object } = Astro.props;
 ---
 

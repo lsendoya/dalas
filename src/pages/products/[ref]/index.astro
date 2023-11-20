@@ -1,12 +1,7 @@
 ---
 import GridProducts from "../../../components/GridProducts.astro";
 import Layout from "../../../layouts/Product.astro";
-import type { TGeneralInfo } from "../../../types/product.js";
 import { references } from "../../../utils/references.js";
-import { sizes } from "../../../utils/size.js";
-
-import pkg from "react-icons/md/index";
-const { MdMoreHoriz } = pkg;
 
 export async function getStaticPaths() {
   return references.map((reference) => {
